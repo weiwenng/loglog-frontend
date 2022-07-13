@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       lists: {},
-      submitted: false,
+      submitted: {logs_confirmed: false},
       logistics:[],
       checkedLogs: [],
       logsprep: [],
@@ -81,8 +81,8 @@ export default {
       })
       const data = await res.json()
       console.log("updateOrder", data)
-      this.submitted = updOrder.logs_confirmed
-      console.log("onsubmit", this.submitted)
+      this.submitted.logs_confirmed = updOrder.logs_confirmed
+      console.log("onsubmit", this.submitted.logs_confirmed)
       this.componentKey += 1
       console.log("componentKey", this.componentKey)
       this.$router.push({path: `/order/${this.id}`})

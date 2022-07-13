@@ -122,7 +122,8 @@ export default {
       deliverydate: "",
       deliverytime: "",
       selected: [],
-      options: [],
+      // options: [],
+      courses: [],
       numofcourses: "",
       items: [],
       itemlists: [],
@@ -226,20 +227,4 @@ export default {
 h1 {
   text-align: center;
 }
-/* .sales_list {
-  display: flex;
-  margin: auto;
-} */
-/* .courses {
-  border: 1px solid black;
-  text-align: center;
-  width: 10rem;
-  margin: auto;
-}
-.chosen.courses {
-  border: 3px solid green;
-  text-align: center;
-  width: 10rem;
-  margin: auto;
-} */
 </style>

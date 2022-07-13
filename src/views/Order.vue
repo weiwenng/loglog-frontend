@@ -23,6 +23,11 @@ export default {
     },
    
     methods: {
+         refreshData() {
+            fetch(`https://backloglog.herokuapp.com/combined/`)
+            .then((response) => response.json())
+            .then(data => data)
+        },
         async displayAll() {
             for (let i = 0; i < this.combined.length; i++) {
                 const res = await fetch(this.combined[i].foodlist)
@@ -40,6 +45,9 @@ export default {
     },
     async created() {
         this.combined = await this.fetchCombined();
+    },
+    mounted() { 
+        this.combined = this.refreshData();
     }
 }
 </script>
