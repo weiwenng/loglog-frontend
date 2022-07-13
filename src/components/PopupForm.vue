@@ -1,6 +1,7 @@
 <template>
   <div class="popup">
     <div class="popup-inner">
+    <button class="right-0 top-0 text-red-600"  @click="TogglePopup()">close popup</button>
         <!-- <form @submit="onSubmit">
             <label>New Category: </label>
             <input type="text" v-model="addNewCategory" required /> <br/>
@@ -9,7 +10,6 @@
             <input type="submit" /> 
         </form> -->
         <slot />
-<button class="popup-close" @click="TogglePopup()">Close</button>
     
     </div>
   </div>

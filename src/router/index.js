@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router"
 import Home from "../views/Home.vue"
 import Sales from "../views/Sales.vue"
-import Stocks from "../views/Stocks.vue"
+import Order from "../views/Order.vue"
 import Menu from "../views/Menu.vue";
 import Checklist from "../views/Checklist.vue"
-import StocksDetail from "../components/StocksDetail.vue"
+import OrderDetail from "../components/OrderDetail.vue"
+import Warehouse from "../views/Warehouse.vue"
 
 const routes = [
   {
@@ -18,20 +19,25 @@ const routes = [
     component: Sales,
   },
   {
-    path: "/stocks",
-    name: "Stocks",
-    component: Stocks,
+    path: "/order",
+    name: "Order",
+    component: Order,
   },
   {
-    path: "/stocks/:id",
-    name: "StocksDetail",
-    component: StocksDetail,
-    props: route => ({ id: parseInt(route.params.id)}),
+    path: "/order/:id",
+    name: "OrderDetail",
+    component: OrderDetail,
+    props: (route) => ({ id: parseInt(route.params.id) }),
   },
   {
     path: "/menu",
     name: "Menu",
     component: Menu,
+  },
+  {
+    path: "/warehouse",
+    name: "Warehouse",
+    component: Warehouse,
   },
   {
     path: "/checklist",

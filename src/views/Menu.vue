@@ -14,8 +14,8 @@
   <div>
     <table>
       <thead>
-        <th>Category <Button @btn-click="() => TogglePopup('categoryNew')" class="add" text="+" /></th>
-        <th>Items <Button class="add" text="+" @btn-click="() => TogglePopup('itemNew')" /></th>
+        <th>Category <Button @btn-click="() => TogglePopup('categoryNew')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded justify-center" text="Add" /></th>
+        <th>Items <Button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded justify-center" text="Add" @btn-click="() => TogglePopup('itemNew')" /></th>
       </thead>
       <tbody>
         <tr v-for="uniquecategory in uniquecategories" :key="uniquecategory">
@@ -27,17 +27,18 @@
       </tbody>
     </table>
     <!-- this is to add category -->
-    <PopupForm v-if="popupTriggers.categoryNew" :TogglePopup="() => TogglePopup('categoryNew')">
+    <PopupForm v-if="popupTriggers.categoryNew" :TogglePopup="() => TogglePopup('categoryNew')" >
         <form @submit="onSubmit">
             <label>New Category: </label>
             <input type="text" v-model="addNewCategory" required /> <br/>
             <label>New Item: </label>
-            <input type="text" v-model="addNewItem" required />
-            <input type="submit" />
+            <input type="text" v-model="addNewItem" required /><br/>
+            <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded justify-center"/>
         </form>
-        </PopupForm>
+    </PopupForm>
     <!-- this is to add items!!!  -->
-          <PopupForm v-if="popupTriggers.itemNew" :TogglePopup="() => TogglePopup('itemNew')">
+    <PopupForm v-if="popupTriggers.itemNew" :TogglePopup="() => TogglePopup('itemNew')" >
+          <!-- <PopupForm v-if="popupTriggers.itemNew" :TogglePopup="() => TogglePopup('itemNew')" > -->
             <form @submit="onSubmit">
             <label>Category: </label>
             <select v-model="addNewCategory">
@@ -46,8 +47,8 @@
                 </option>
             </select><br/>
             <label>New Item: </label>
-            <input type="text" v-model="addNewItem" required/>
-            <input type="submit" />
+            <input type="text" v-model="addNewItem" required /><br/>
+            <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded justify-center" />
             </form>
         </PopupForm>
   </div>

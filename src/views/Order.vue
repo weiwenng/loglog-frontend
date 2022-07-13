@@ -8,7 +8,7 @@
 import OrderDisplay from '../components/OrderDisplay'
 
 export default {
-    name: 'Stocks',
+    name: 'Order',
     components: {
         OrderDisplay
     },

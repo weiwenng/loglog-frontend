@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header title="loglog" /> 
+    <Header title="log-log---" /> 
     <!-- <Sales /> -->
     <router-view></router-view>
   </div>

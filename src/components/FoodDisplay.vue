@@ -1,19 +1,22 @@
 <template>
-    <div>
-         <li v-for="food in foodlists" :key="food.id"> 
-                {{ food.itemname }} <Button text="Edit"/>
-            </li>
+    <div v-for="food in foodlists" :key="food.id">
+         <!-- <li v-for="food in foodlists" :key="food.id">  -->
+            <!-- {{ food }} -->
+                <EditFoodName :food="food" :key="food.id"/> 
+                <!-- {{ food.itemname }} <Button text="Edit"/> -->
+            <!-- </li> -->
     </div>
 </template>
 
 <script>
 import Button from "../components/Button.vue"
-import { onUpdated } from "vue"
+import EditFoodName from "./EditFoodName.vue"
 export default {
     name: "FoodDisplay",
     props: ['uniquecategory'],
     components: {
-        Button
+        Button,
+        EditFoodName
     },
     data() {
         return {
@@ -21,18 +24,39 @@ export default {
         }
     },
     methods: {
-        async getList(category) {
-            const res = await fetch('https://backloglog.herokuapp.com/foodlist')
+        refreshData(category) {
+            fetch(`https://backloglog.herokuapp.com/foodlist`)
+            .then((response) => response.json())
+            .then(data => {
+                this.foodlists = data.filter(food => food.category === category)
+            })
+        },
+        async editName(id) {
+            const res = await fetch(`https://backloglog.herokuapp.com/foodlist/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify()
+            })
             const data = await res.json()
-            return data.filter(food => food.category === category)
+            return data
+
+        },
+        async getList(category) {
+            ((async() => {
+                const res = await fetch('https://backloglog.herokuapp.com/foodlist')
+            const data = await res.json()
+            this.foodlists = await data.filter(food => food.category === category)
+            })()).catch(console.error)
+            return this.foodlists
         }
     },
     async created() {
         this.foodlists = await this.getList(this.uniquecategory);
     }, 
-    onUpdated() {
-        console.log("updated!!!!!!")
-        this.foodlists = this.getList(this.uniquecategory);
+    mounted() {
+        this.refreshData(this.uniquecategory);
     }
 }
 </script>

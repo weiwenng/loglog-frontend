@@ -34,6 +34,7 @@ export default {
       })
         const data = await res.json()
         this.orders = [...this.orders, data]
+        this.$router.push({path: '/order'})
     },
     async addOrderMenu(ordermenu) {
       // const ordermenu = console.log(ordermenu)
@@ -43,7 +44,7 @@ export default {
       console.log("order_id", order_id)
       for (let i = 0; i < ordermenu.length; i++ ) {
         const res = await fetch(`https://backloglog.herokuapp.com/combined/`, {
-          method: "POST",
+          method: "POST", 
           headers: {
             "Content-Type": "application/json"
           },

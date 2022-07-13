@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import vSelect from 'vue-select'
+import "./index.css";
 // import { BootstrapVue, IconsPlugin, CollapsePlugin } from "bootstrap-vue";
 
 // import "bootstrap/dist/css/bootstrap.css";

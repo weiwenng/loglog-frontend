@@ -7,7 +7,7 @@
            <h3>Order #{{ order }}</h3>
                 <i v-if="!isOpen.includes(index)" class="fal fa-plus"/>
                 <i v-else class="fal fa-minus"/>
-              <router-link class="link" :to="{ name:'StocksDetail', params: {id: order} }">More Details</router-link>
+              <router-link class="link" :to="{ name:'OrderDetail', params: {id: order} }">More Details</router-link>
             </div>    
            <div class="accordion-body">
         <div class="accordion-content">
@@ -53,10 +53,13 @@ export default {
         return this.orderNum;
     },
     filterMenu() {
+      ((async() => {
         for (let i = 0; i < this.orderNum.length; i++) {
             // console.log("hi", `https://backloglog.herokuapp.com/order/${this.orderNum[i]}/`)
             this.menus = this.combined.map(combine => combine).filter(combine => combine.orders == `https://backloglog.herokuapp.com/order/${this.orderNum[i]}/` )
         }
+      })().catch(console.error))
+       
         return this.menus;
     },
   },
