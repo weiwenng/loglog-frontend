@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <Header title="log-log---" /> 
+    <img src="https://i.imgur.com/xH3BMT6.png?1" class="h-12 w-12 m-auto"/>
+    <Header title="log-log" /> 
     <!-- <Sales /> -->
     <router-view></router-view>
   </div>
