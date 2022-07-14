@@ -54,28 +54,6 @@ export default {
         this.combined = [...this.combined, data]
       }
     },
-    // async toggleCourse(id) {
-    //   const courseToToggle = await this.fetchCourse(id)
-    //   console.log("courseToToggle", courseToToggle)
-    //   const updCourse = { ...courseToToggle, chosen: !courseToToggle.chosen }
-    //   console.log("updCourse", updCourse)
-
-    //   const res = await fetch(`https://backloglog.herokuapp.com/menu/${id}/`, {
-    //     method: "PUT",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(updCourse)
-    //   })
-    //   const data = await res.json()
-    //   this.menus = this.menus.map((menu) => menu.id === id ? {...menu, chosen: data.chosen} : menu)
-    // },
-    // async fetchCourse(id) {
-    //   const res = await fetch(`https://backloglog.herokuapp.com/menu/${id}/`)
-    //   const data = await res.json()
-    //   console.log("course id", data)
-    //   return data
-    // },
     async getMenu() { 
       const response = await fetch('https://backloglog.herokuapp.com/menu/', {
         method: "GET",

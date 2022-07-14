@@ -1,10 +1,6 @@
 <template>
   <div v-for="food in foodlists" :key="food.id">
-    <!-- <li v-for="food in foodlists" :key="food.id">  -->
-    <!-- {{ food }} -->
     <EditFoodName :food="food" :key="food.id" @delete-food="deleteFood" />
-    <!-- {{ food.itemname }} <Button text="Edit"/> -->
-    <!-- </li> -->
   </div>
 </template>
 

@@ -7,10 +7,9 @@
     </div>
     <p class="text-gray-700 text-base">
     Description: {{ logs.description }} <br/>
-    <!-- Per Packet: {{ logs.perpkt }} <br/> -->
-      Quantity: {{ logs.quantity }} <br/>
-      Total Quantity: {{ logs.quantity * logs.perpkt }} <br/>
-      Price:  ${{ logs.price }} <br/>
+    Quantity: {{ logs.quantity }} <br/>
+    Total Quantity: {{ logs.quantity * logs.perpkt }} <br/>
+    Price:  ${{ logs.price }} <br/>
     </p>
   </div>
   <div class="px-6 pt-4 pb-2">
@@ -35,10 +34,9 @@
     </div>
     <p class="text-gray-700 text-base">
     Description: {{ logs.description }} <br/>
-    <!-- Per Packet: {{ logs.perpkt }} <br/> -->
-      Quantity: <input class="w-24 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700" v-model="logs.quantity" />  <br/>
-      Total Quantity: {{ logs.quantity * logs.perpkt }} <br/>
-      Price:  $ <input class="w-24 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700" v-model="logs.price" /> <br/>
+    Quantity: <input class="w-24 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700" v-model="logs.quantity" />  <br/>
+    Total Quantity: {{ logs.quantity * logs.perpkt }} <br/>
+    Price:  $ <input class="w-24 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700" v-model="logs.price" /> <br/>
     </p>
   </div>
   <div class="px-6 pt-4 pb-2">
