@@ -2,6 +2,7 @@
     <!-- <Button /> -->
     <div>
         <p> hello loggers!! </p>
+        <p> this app links the sales dept tgt w the logs dept of a mini buffet company!! </p> <br/>
         <p> for fooditem list & buffet packages, pls go to <span class="underline underline-offset-2 font-bold text-blue-800">menu</span> tab </p>
         <p> to input sales order, pls go to <span class="underline underline-offset-2 font-bold text-blue-800">sales</span> tab </p>
         <p> for entire order list, pls go to all <span class="underline underline-offset-2 font-bold text-blue-800">orders</span> tab </p>
