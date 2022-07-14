@@ -30,9 +30,10 @@ body {
 }
 .container {
   max-width: 85%;
+  max-height: 85%;
   margin: 30px auto;
   overflow: auto;
-  min-height: 300px;
+  min-height: auto;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;

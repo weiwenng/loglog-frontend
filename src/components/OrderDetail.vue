@@ -26,8 +26,6 @@
     Logistics to prepare for: <br/> 
     <div v-for="logs in logsforthisorder" :key="logs.url">
     {{ logs.logsneeded}}  {{ logs.logistics.name }} 
-
-
     </div>
     
   </div>
@@ -85,6 +83,7 @@ export default {
       console.log("onsubmit", this.submitted.logs_confirmed)
       this.componentKey += 1
       console.log("componentKey", this.componentKey)
+      this.logsforthisorder = await this.getIndivLogs();
       this.$router.push({path: `/order/${this.id}`})
       
     },
@@ -101,10 +100,10 @@ export default {
       console.log("thislist", this.lists);
       return this.lists;
     },
-    async getIndivLogs() {
+    async getIndivLogs(id) {
       const res = await fetch('https://backloglog.herokuapp.com/logsprep/')
       const data = await res.json();
-      this.logsforthisorder = data.filter(order => order.orders === `https://backloglog.herokuapp.com/order/${this.id}/`)
+      this.logsforthisorder = data.filter(order => order.orders === `https://backloglog.herokuapp.com/order/${id}/`)
       for (let i = 0; i < this.logsforthisorder.length;  i++ ) {
         const res2 = await fetch(this.logsforthisorder[i].logistics)
         const data2 = await res2.json()
@@ -135,8 +134,11 @@ export default {
     this.logistics = await this.getLogs();
     this.logsprep = await this.getLogsPrep(); 
     this.submitted = await this.fetchOrder(this.id);
-    this.logsforthisorder = await this.getIndivLogs();
+    this.logsforthisorder = await this.getIndivLogs(this.id);
   },
+  // async mounted() {
+  //   this.logsforthisorder = await this.getIndivLogs(this.id);
+  // }
 };
 </script>
 

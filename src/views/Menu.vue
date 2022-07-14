@@ -30,9 +30,9 @@
     <PopupForm v-if="popupTriggers.categoryNew" :TogglePopup="() => TogglePopup('categoryNew')" >
         <form @submit="onSubmit">
             <label>New Category: </label>
-            <input type="text" v-model="addNewCategory" required /> <br/>
+            <input type="text" v-model="addNewCategory" required class="w-64 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-1" /> <br/>
             <label>New Item: </label>
-            <input type="text" v-model="addNewItem" required /><br/>
+            <input type="text" v-model="addNewItem" required class="w-64 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-1" /><br/>
             <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded justify-center"/>
         </form>
     </PopupForm>
@@ -41,13 +41,13 @@
           <!-- <PopupForm v-if="popupTriggers.itemNew" :TogglePopup="() => TogglePopup('itemNew')" > -->
             <form @submit="onSubmit">
             <label>Category: </label>
-            <select v-model="addNewCategory">
+            <select v-model="addNewCategory" class="w-64 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-1">
                 <option v-for="uniquecategory in uniquecategories" :key="uniquecategory">
                     {{ uniquecategory }}
                 </option>
             </select><br/>
             <label>New Item: </label>
-            <input type="text" v-model="addNewItem" required /><br/>
+            <input type="text" v-model="addNewItem" required class="w-64 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-1" /><br/>
             <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded justify-center" />
             </form>
         </PopupForm>
