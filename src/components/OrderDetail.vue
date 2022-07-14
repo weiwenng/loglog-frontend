@@ -83,7 +83,7 @@ export default {
       console.log("onsubmit", this.submitted.logs_confirmed)
       this.componentKey += 1
       console.log("componentKey", this.componentKey)
-      this.logsforthisorder = await this.getIndivLogs();
+      this.logsforthisorder = await this.getIndivLogs(this.id);
       this.$router.push({path: `/order/${this.id}`})
       
     },
