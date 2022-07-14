@@ -94,7 +94,7 @@ export default {
             async countStocks(url) {
             const res = await fetch('https://backloglog.herokuapp.com/logsprep/')
             const data = await res.json()
-            console.log("filter", data.filter((log) => log.logistics === url).reduce((a, b) => a + b.logsneeded, 0))
+            // console.log("filter", data.filter((log) => log.logistics === url).reduce((a, b) => a + b.logsneeded, 0))
             this.countstocks = data.filter((log) => log.logistics === url).reduce((a, b) => a + b.logsneeded, 0)
             if( this.countstocks < this.logs.quantity * this.logs.perpkt) {
                 this.isLow = false 
