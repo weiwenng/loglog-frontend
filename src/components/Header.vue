@@ -6,9 +6,9 @@
         <router-link class="btn" to="/menu">Menu</router-link>
         <router-link class="btn" to="/sales">Sales</router-link>
         <!-- <router-link class="btn" to="/logistics">Logistics</router-link> -->
-        <router-link class="btn" to="/order">Order Summary</router-link>
+        <router-link class="btn" to="/order">All Orders</router-link>
+        <router-link class="btn" to="/orderbydate">Orders By Date</router-link>
         <router-link class="btn" to="/warehouse">Warehouse</router-link>
-        <router-link class="btn" to="/checklist">Checklist</router-link>
     </header>
     </div>
 </template>

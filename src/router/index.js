@@ -3,7 +3,7 @@ import Home from "../views/Home.vue"
 import Sales from "../views/Sales.vue"
 import Order from "../views/Order.vue"
 import Menu from "../views/Menu.vue";
-// import Checklist from "../views/Checklist.vue"
+import OrderByDate from "../views/OrderByDate.vue"
 import OrderDetail from "../components/OrderDetail.vue"
 import Warehouse from "../views/Warehouse.vue"
 
@@ -39,11 +39,11 @@ const routes = [
     name: "Warehouse",
     component: Warehouse,
   },
-  // {
-  //   path: "/checklist",
-  //   name: "Checklist",
-  //   component: Checklist,
-  // },
+  {
+    path: "/orderbydate",
+    name: "OrderByDate",
+    component: OrderByDate,
+  },
 ];
 
 const router = createRouter({
