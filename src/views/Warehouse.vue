@@ -24,7 +24,6 @@
     <div v-for="logs in logslists" :key="logs.id" class="m-4 h-64 inline-flex">
       <LogsDisplay :logs="logs" @delete-logs="deleteLogs" />
     </div>
-    <!-- <div class="max-w-sm rounded overflow-hidden shadow-lg m-4 h-64 inline-flex"> -->
   </div>
   <PopupForm v-show="toggle" :TogglePopup="() => TogglePopup()">
     <form @submit="onSubmit">

@@ -6,23 +6,12 @@
   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 </svg>
 </button><br/>
-    <!-- <button class="right-0 top-0 text-red-600"  @click="TogglePopup()">close popup</button> -->
-        <!-- <form @submit="onSubmit">
-            <label>New Category: </label>
-            <input type="text" v-model="addNewCategory" required /> <br/>
-            <label>New Item: </label>
-            <input type="text" v-model="addNewItem" required /> <br />
-            <input type="submit" /> 
-        </form> -->
         <slot />
-    
     </div>
   </div>
 </template>
 
 <script>
-// import Button from "./Button.vue"
-// import "@/assets/_shared.scss";
 export default {
     name: "PopupForm",
     props: ['TogglePopup'],

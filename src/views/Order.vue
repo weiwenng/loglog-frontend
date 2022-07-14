@@ -12,13 +12,9 @@ export default {
     components: {
         OrderDisplay
     },
-    // props: {
-    //     showMenu: Boolean,
-    // },
     data() {
        return {
         combined: [],
-        // isActive: false,
        }
     },
    

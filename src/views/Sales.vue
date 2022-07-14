@@ -1,8 +1,5 @@
 <template>
-  <SalesList @add-sale="addSale" @add-order-menu="addOrderMenu" :menus="menus" :orders="orders" />
-  <!-- <SalesList @add-sale="addSale" @toggle-course="toggleCourse" :menus="menus" :orders="orders" :showAddOrder="showAddOrder" /> -->
-  <!-- <router-view :showAddOrder="showAddOrder"></router-view> -->
-  
+  <SalesList @add-sale="addSale" @add-order-menu="addOrderMenu" :menus="menus" :orders="orders" />  
 </template>
 
 <script>

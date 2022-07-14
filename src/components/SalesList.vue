@@ -24,7 +24,6 @@
             </option>
           </select>
         </div>
-        <!-- <AddOrder /> -->
         <div class="md:flex md:items-center mb-6">
           <div class="md:w-1/3">
             <label
@@ -41,9 +40,6 @@
             :selectable="() => selected.length < parseInt(numofcourses)"
             class="block appearance-none w-full tracking-wide bg-gray-200 border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
           >
-            <!-- <template #header>
-            <div style="opacity: 0.8">Courses:</div>
-          </template> -->
           </v-select>
         </div>
         <div class="md:flex md:items-center mb-6">
@@ -101,7 +97,6 @@
 
 <script>
 import vSelect from "vue-select";
-import AddOrder from "./AddOrder(NotinUse).vue";
 import Button from "./Button.vue";
 export default {
   name: "Menu",
@@ -111,7 +106,6 @@ export default {
     order: Array,
   },
   components: {
-    AddOrder,
     Button,
     vSelect,
   },
