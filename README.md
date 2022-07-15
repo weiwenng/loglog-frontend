@@ -4,7 +4,7 @@ SEI 36 - Project 4
 
 ## Overview
 
-Website created using PostgreSQL, Python, Django, Vue
+Website created using PostgreSQL, Python, Django, Vue.
 This links the sales department together with the logistics department of a mini buffet company.
 
 
