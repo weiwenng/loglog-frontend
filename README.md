@@ -1,10 +1,14 @@
-# frontloglog
+# log-log
 
+SEI 36 - P
+
+## 
 
 ## App Structure 
 
 ### Front End
-```├── App.vue
+```
+├── App.vue
 ├── assets
 │   └── logo.png
 ├── components
