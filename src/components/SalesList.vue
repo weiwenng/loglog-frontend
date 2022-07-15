@@ -146,15 +146,27 @@ export default {
         alert(`num of pax cannot be below than min pax stated!! `);
         return;
       }
+         let d = new Date();
+         let today = d.getFullYear().toString() + "-" + (d.getMonth() + 1).toString().padStart(2, '0') + "-" + d.getDate().toString().padStart(2,'0')
+         
+      if (this.deliverydate <= today) {
+        alert ("we are unable to deliver on this day sorry!!! ")
+        return;
+      }
+
       if (
         !this.address ||
         !this.deliverydate ||
         !this.deliverytime ||
         this.selected.length !== parseInt(this.numofcourses)
       ) {
+        console.log(d)
+        console.log (today)
+        console.log(this.deliverydate)
         alert("please fill in missing details");
         return;
       }
+   
       //! need to amend this
       let menu_id = this.numofcourses - 1;
 
