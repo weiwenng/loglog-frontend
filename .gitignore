@@ -21,3 +21,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+src/ignore/AddOrder(NotinUse).vue
+src/ignore/NotInUse.vue
+src/ignore/Testing.vue
